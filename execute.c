@@ -195,7 +195,11 @@ int executeFunc(char **args)
 	if (args[0] == NULL) {
         return 1;
     }
-	
+
+	if (strcmp(args[0], "exit")==0) {
+		return -100;
+	}
+
 	int redir=0,pipe=0,a;
 
 	for (a=0;args[a] != NULL;a++){
@@ -216,7 +220,6 @@ int executeFunc(char **args)
 		redirect_cmd(args);
 		return 1;
 	}
-
 
 	for (int i = 0; i < num_builtins(); i++) 
 	{

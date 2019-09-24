@@ -44,6 +44,9 @@ void start_shell(){
 		{
 			char **args1 = splitLine(args[i]);
 			j=executeFunc(args1);
+			if(j==-100){
+				exit(0);
+			}
 		}
 		background_fxn();
 	}
